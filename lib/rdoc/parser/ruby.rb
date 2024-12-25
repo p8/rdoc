@@ -139,8 +139,13 @@ require_relative 'ripper_state_lex'
 #   def regular_method() end
 #
 # Note that by default, the :method: directive will be ignored if there is a
-# standard rdocable item following it.
-
+# standard rdocable item following it:
+#
+#   ##
+#   # :method: ghost_method
+#   # This method will be ignored.
+#
+#   def standard_rdocable_method() end
 class RDoc::Parser::Ruby < RDoc::Parser
 
   parse_files_matching(/\.rbw?$/)
